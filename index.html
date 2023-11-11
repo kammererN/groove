@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>queryTool</title>
+
+    <!-- import Bootstrap v5.3.0-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <!-- Meta Viewport for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png">
+    <!-- External stylesheet -->
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+</head>
+<body>
+    <!-- The entire site container-->
+    <div class="container d-flex align-items-center justify-content-center vh-100">
+        <div class="col-lg-4 col-sm-8">
+        <!-- Navbar -->
+        <ul class="nav nav-pills justify-content-center" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="gpt-tab" data-bs-toggle="pill" data-bs-target="#gpt" type="button"
+                        role="tab"><iconify-icon icon="simple-icons:openai" width="20" height="20"></iconify-icon> GPT</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="quizlet-tab" data-bs-toggle="pill" data-bs-target="#quizlet" type="button"
+                        role="tab"><iconify-icon icon="simple-icons:quora" width="20" height="20"></iconify-icon> Quizlet</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="stackexchange-tab" data-bs-toggle="pill" data-bs-target="#stackexchange"
+                        type="button" role="tab"><iconify-icon icon="simple-icons:stackexchange" width="20" height="20"></iconify-icon> Stack X</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="about-tab" data-bs-toggle="pill" data-bs-target="#about" type="button" role=
+                  "tab"><iconify-icon icon="mdi:about-circle-outline" width="20" height="20"></iconify-icon> About</button>
+            </li>
+        </ul>
+
+        <!-- Main site content-->
+        <div class="tab-content p-2 rounded-2 mt-2">
+
+            <!-- GPT tab-->
+            <div class="tab-pane fade show active justify-content-center" id="gpt" role="tabpanel" tabindex="0">
+                <div class="row">
+                    <div>
+                        <div class="form-floating mb-2">
+                            <input class="form-control" id="instructions" placeholder="Instructions"></input>
+                            <label for="instructions"><b>Instructions</b></label>
+                        </div>
+                        <div class="form-floating mb-2">
+                            <textarea class="form-control" id="context" placeholder="Context" style="height: 50dvh"></textarea>
+                            <label for="context"><b>Context</b></label>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center">
+                                <button id="build" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#promptModal">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quizlet tab-->
+            <div class="tab-pane fade" id="quizlet" role="tabpanel" tabindex="0">
+                <div class="row">
+                <div>
+                    <div class="form-floating mb-2">
+                        <textarea type="text" class="form-control" id="quizQuestion" placeholder="Question"
+                                  style="height: 20dvh"></textarea>
+                        <label for="quizQuestion"><b>Question</b></label>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <button id="searchQuizlet" class="btn btn-primary">Search</button>
+
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- Stack Exchange tab-->
+            <div class="tab-pane fade" id="stackexchange" role="tabpanel" tabindex="0">
+                <div class="row">
+                <div>
+                    <div class="form-floating mb-2">
+                        <textarea type="text" class="form-control" id="stackQuestion" placeholder="Question"
+                                  style="height: 20dvh"></textarea>
+                        <label for="stackQuestion"><b>Question</b></label>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <button id="searchStackExchange" class="btn btn-primary">Search</button>
+
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!-- About tab-->
+            <div class="tab-pane fade" id="about" role="tabpanel" tabindex="0">
+                <div class="row p-2 rounded-2" id="aboutContainer">
+                    <!-- TODO: Explain this applet-->
+                    <h3 class="display-6 text-center pb-3">queryTool</h3>
+                    <p>This web application is designed to make it faster to utilize Google and GPT-4 search
+                      templates.</p>
+                    <p>It functions as a redirect hub for the resources specified in the navigation menu, adding
+                      functionality by completing complex search queries.</p>
+                    <hr>
+                    <h4 class="h4 text-center pt-2 pb-2">How To Use</h4>
+                    <p>For GPT, <b>instructions</b> refer to the actual operation you want GPT to complete, e.g.
+                      <i>answer this question</i>.</p>
+                    <p><b>Context</b> refers to the question to be solved, e.g. <i>what's 9 + 10?</i>.</p>
+                    <p>Clicking <b>search</b> will return a completed prompt template, which follows
+                      <a href="https://platform.openai.com/docs/guides/gpt-best-practices">OpenAI best-practices.</a>
+                      This allows the model to respond with a higher degree of accuracy.</p>
+                    <p>For non-GPT options, simply type your question and click <b>search</b>.</p>
+                    <hr>
+                    <p><b>Disclaimer: </b><i>The author of this application does not endorse the use of queryTool to
+                      cheat in higher education.</i></p>
+                    <p class="text-center mt-2">&copy 2023 <a href="https://github.com/nxrada">nick</a></p>
+
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- External scripts-->
+    <div>
+        <!-- import jQuery-->
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+                integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+        <!-- import Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+                crossorigin="anonymous"></script>
+        <!--import Iconify -->
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    </div>
+
+</body>
+
+<!-- GPT PROMPT MODAL -->
+    <div class="modal fade" id="promptModal" tabindex="-1" aria-labelledby="promptModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                    <h1 class="modal-title" id="promptModalLabel">Prompt</h1>
+                   <!-- Example split danger button -->
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-outline-primary">Copy</button>
+                        <button id="query" type="button" class="btn btn-primary">Open in ChatGPT</button>
+                        <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span class="visually-hidden">Toggle Dropdown</span>
+                            </button>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" id="openGPTv35" href="#">Open in ChatGPTv3.5</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item disabled" href="#"><i>More coming soon!</i></a></li>
+                        </ul>
+                    </div>
+            </div>
+            <div class="modal-body">
+                <pre><code id="markdown"></code></pre>
+            </div>
+            <div class="modal-footer">
+                <p><i></i></p>
+            </div>
+        </div>
+    </div>
+</html>
