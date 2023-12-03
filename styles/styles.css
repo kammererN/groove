@@ -1,22 +1,13 @@
 body {
     /* background-image: url(''); */
-    background-color: darkolivegreen;
+    background-color: whitesmoke;
 }
 .nav-link {
-    color:white;
+    color:black;
 }
 .nav-link:hover {
-    color:white;
-}
-#aboutContainer {
-    background-color: white;
+    color:black;
 }
 iconify-icon {
     vertical-align: -0.125em;
-}
-/* Shrinks navbar on normal iPhones */
-@media (max-width: 415px) {
-    #aboutContainer {
-        font-size: 0.80em;
-    }
 }

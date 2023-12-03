@@ -1,48 +1,93 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en-us">
+
+<!-- HEAD -->
 <head>
     <title>Groove | Chord Progression Generator</title>
 
-    <!-- import Bootstrap v5.3.0-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Meta Viewport for mobile-->
+    <!-- IMPORT BOOTSTRAP 5.3.0-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- META VIEWPORT; REQUIRED FOR MOBILE RESPONSIVENESS -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Favicon -->
+
+    <!-- IMPORT FAVICON -->
     <link rel="icon" type="image/x-icon" href="./images/favicon.png">
-    <!-- External stylesheet -->
+
+    <!-- IMPORT STYLES.CSS -->
     <link rel="stylesheet" type="text/css" href="./styles/styles.css">
-</head>
+
+</head><!-- END HEAD -->
+
+<!-- BODY -->
 <body>
-    <!-- The entire site container-->
-    <div class="container fluid">
-        <div class="">
-        <ul class="nav nav-underline">
-            <li class="nav-item">
-                <a class="nav-link active" href="#chord-prog">Chord Progression</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#about">About</a>
-            </li>
-        </ul>
+    <!-- GLOBAL CONTAINER -->
+    <div class="container mt-4">
 
-        <!-- Main site content-->
-        <div class="">
+            <!-- NAVBAR TABS -->
+            <ul class="nav nav-underline" id="navbar" role="tablist">
 
-        </div>
-        </div>
-    </div>
+                <!-- APP TAB -->
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link active" id="app-tab" data-bs-toggle="tab" data-bs-target="#app-tab-pane"
+                          type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">
+                          <iconify-icon icon="ic:round-music-note"></iconify-icon> Chord Progression</button>
+                </li><!-- END CHORD PROGRESSION TAB -->
 
-    <!-- External scripts-->
+                <!-- ABOUT TAB -->
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link" id="about-tab" data-bs-toggle="tab" data-bs-target="#about-tab-pane"
+                          type="button" role="tab" aria-controls="about-tab-pane" aria-selected="false">
+                          <iconify-icon icon="ic:round-question-mark"></iconify-icon> About</button>
+                </li><!-- END ABOUT TAB  -->
+
+            </ul> <!-- END NAVBAR TABS-->
+
+              <!-- TAB-CONTENT -->
+              <div class="tab-content" id="navbar-content">
+
+                <!-- APP TAB-CONTENT -->
+                <div class="tab-pane fade show active" id="app-tab-pane" role="tabpanel" aria-labelledby="app-tab" tabindex="0">
+
+                  <!-- APP CONTAINER -->
+                  <div>
+                    <h1 class="">APP GOES HERE</h1>
+                  </div><!-- END APP CONTAINER -->
+
+                </div><!-- END APP TAB-CONTENT -->
+
+                <!-- ABOUT TAB-CONTENT -->
+                <div class="tab-pane fade" id="about-tab-pane" role="tabpanel" aria-labelledby="about-tab" tabindex="0">
+
+                  <!-- ABOUT CONTAINER-->
+                  <div>
+                    <h1 class="">ABOUT GOES HERE</h1>
+                  </div><!-- END ABOUT CONTAINER -->
+
+                </div><!-- END ABOUT TAB-CONTENT-->
+
+              </div><!-- END TAB-CONTENT -->
+
+    </div><!-- END GLOBAL DIV -->
+
+    <!-- SCRIPT IMPORTS -->
     <div>
-        <!-- import jQuery-->
-        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-        <!-- import Bootstrap-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-        <!--import Iconify -->
-        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
-        <!-- import script.js -->
-        <script src='./scripts/script.js'></script>
-    </div>
 
-</body>
+        <!-- IMPORT JQUERY 3.7.0 VIA CDN -->
+        <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
+        <!-- IMPORT BOOTSTRAP JS 5.3.0 VIA CDN-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!--IMPORT ICONIFY VIA CDN -->
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+
+        <!-- IMPORT LOCAL SCRIPT.JS -->
+        <script src='./scripts/script.js'></script>
+
+    </div><!-- END SCRIPT IMPORTS-->
+
+</body><!-- END BODY -->
+
 </html>
