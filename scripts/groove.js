@@ -35,7 +35,7 @@ function chord(bass,quality,seventh) {
 
     switch(bass) {
         case "E":
-            chord.concat("\"E2\",\"B3\",\"B4\""); 
+            chord = chord.concat("\"E2\",\"B3\",\"B4\"");
     }
     return chord.concat("]") ;
 }
