@@ -8,12 +8,11 @@ const sampler = new Tone.Sampler({
     "F#4": "Fs4.mp3",
     "A4": "A4.mp3",
     "C5": "C5.mp3",
-    "A5": "A5.mp3",
     "F#5": "Fs5.mp3",
     "A2": "A2.mp3",
     "D#2": "Ds2.mp3",
     "D#3": "Ds3.mp3",
-    
+
   },
   release: 1,
   baseUrl: "https://tonejs.github.io/audio/salamander/",
@@ -26,17 +25,17 @@ playButton.addEventListener("click", () => {
 
   //sampler.triggerAttackRelease(["E2", "B3", "E3","G#3","B4","D#4"],4);
   //console.log(chord("E","major",false,false));
-  console.log(chord("E", "major", true, false));
+  console.log(chord("C", "major", true, false));
 
   now = Tone.now();
 
   //sampler.triggerAttackRelease(chord("E","minor",true,false),4,now);
 
-  sampler.triggerAttackRelease(chord("A", "major", false, false), 4, now);
-  sampler.triggerAttackRelease(chord("A", "major", true, false), 4, now + 3);
-  sampler.triggerAttackRelease(chord("A", "minor", false, false), 4, now + 6);
-  sampler.triggerAttackRelease(chord("A", "minor", true, false), 4, now + 9);
-  sampler.triggerAttackRelease(chord("A", "dom", false, true), 4, now + 12);
+  sampler.triggerAttackRelease(chord("C", "major", false, false), 4, now);
+  sampler.triggerAttackRelease(chord("C", "major", true, false), 4, now + 3);
+  sampler.triggerAttackRelease(chord("C", "minor", false, false), 4, now + 6);
+  sampler.triggerAttackRelease(chord("C", "minor", true, false), 4, now + 9);
+  sampler.triggerAttackRelease(chord("C", "dom", false, true), 4, now + 12);
 
 })
 
@@ -231,6 +230,87 @@ function chord(bass, quality, seventh, dominant) {
         chord.push("C4");
       } else {
         chord.push("C#4");
+      }
+      break;
+
+    case "A#":
+      chord.push("A#3", "F3", "A#4", "F4");
+
+      if (dominant) {
+        chord.push("D4", "G#4");
+        break;
+      }
+
+      if (seventh) {
+
+        if (quality == "minor") {
+          chord.push("C#4", "G#4");
+
+        } else {
+          chord.push("D4", "A5");
+        }
+        break;
+      }
+
+      chord.push("A#5");
+      if (quality == "minor") {
+        chord.push("C#4");
+      } else {
+        chord.push("D4");
+      }
+      break;
+
+    case "B":
+      chord.push("B3", "F#3", "B4", "F#4");
+
+      if (dominant) {
+        chord.push("D#4", "A5");
+        break;
+      }
+
+      if (seventh) {
+
+        if (quality == "minor") {
+          chord.push("D4", "A5");
+
+        } else {
+          chord.push("D#4", "A#5");
+        }
+        break;
+      }
+
+      chord.push("B5");
+      if (quality == "minor") {
+        chord.push("D4");
+      } else {
+        chord.push("D#4");
+      }
+      break;
+
+    case "C":
+      chord.push("C3", "E3", "C4", "E4");
+
+      if (dominant) {
+        chord.push("E4", "A#5");
+        break;
+      }
+
+      if (seventh) {
+
+        if (quality == "minor") {
+          chord.push("D#4", "A#5");
+
+        } else {
+          chord.push("E4", "B5");
+        }
+        break;
+      }
+
+      chord.push("C5");
+      if (quality == "minor") {
+        chord.push("D#4");
+      } else {
+        chord.push("E4");
       }
       break;
 
