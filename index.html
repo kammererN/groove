@@ -18,15 +18,20 @@
     <!-- IMPORT STYLES.CSS -->
     <link rel="stylesheet" type="text/css" href="./styles/styles.css">
 
+    <!-- IMPORT GROOVESTYLE.CSS -->
+    <!--link rel="stylesheet" type="text/css" href="./styles/groovestyle.css"-->
+
 </head><!-- END HEAD -->
 
 <!-- BODY -->
 <body>
     <!-- GLOBAL CONTAINER -->
-    <div id="global-container" class="container mt-4">
+    <div id="global-container" class="container w-50 h-50 mt-5 mb-5 rounded-5">
 
+        <!-- TAB CONTAINER -->
+        <div class="p-3 m-3 mt-5" id="tabbed-container">
             <!-- NAVBAR TABS -->
-            <ul class="nav nav-underline" id="navbar" role="tablist">
+            <ul class="nav nav-underline justify-content-center" id="navbar" role="tablist">
 
                 <!-- APP TAB -->
                 <li class="nav-item" role="presentation">
@@ -43,40 +48,45 @@
                 </li><!-- END ABOUT TAB  -->
 
             </ul> <!-- END NAVBAR TABS-->
+        </div><!-- END TAB CONTAINER -->
 
-              <!-- TAB-CONTENT -->
-              <div class="tab-content" id="navbar-content">
+        <!-- CONTENT CONTAINER -->
+        <div class="container" id="content-container">
+          <!-- TAB-CONTENT -->
+            <div class="tab-content" id="navbar-content">
 
                 <!-- APP TAB-CONTENT -->
-                <div class="tab-pane fade show active" id="app-tab-pane" role="tabpanel" aria-labelledby="app-tab" tabindex="0">
+                <div class="tab-pane fade show active my-3 py-3" id="app-tab-pane" role="tabpanel" aria-labelledby="app-tab" tabindex="0">
 
-                  <!-- APP CONTAINER -->
-                  <div class="mt-4">
-                    <button type="button" class="btn" id="random-button">
-                      <iconify-icon icon="game-icons:perspective-dice-six-faces-random" id="random-icon"></iconify-icon></button>
+                  <!-- APP ROW -->
+                  <div class="row my-3">
+                    <!-- APP BTNS COL -->
+                    <div class="pb-3">
 
+                    </div><!-- END APP BTNS COL -->
+
+                    <!-- CHORD PROGRESSION COL -->
+                    <!-- END CHORD PROGRESSION COL -->
                     <!-- CHORD PROGRESSION BTN GROUP -->
-                    <div class="btn-group" role="group" aria-label="Basic example">
+                    <div class="btn-group" role="group" aria-label="Basic example" id="app-btn-group">
 
                       <button type="button" class="btn btn-dark" id="play-button"><iconify-icon icon="basil:play-outline"></iconify-icon></button>
-                      <button type="button" class="btn btn-outline-dark"><span>A</span></button>
-                      <button type="button" class="btn btn-outline-dark"><span>C</span></button>
-                      <button type="button" class="btn btn-outline-dark"><span>A</span></button>
-                      <button type="button" class="btn btn-outline-dark"><span>B</span></button>
+                      <button type="button" class="btn btn-outline-dark" id="random-button">
+                        <iconify-icon icon="game-icons:perspective-dice-six-faces-random"></iconify-icon></button>                      <button type="button" class="btn btn-outline-dark disabled"><span id="chord-two">C</span></button>
+                      <button type="button" class="btn btn-outline-dark disabled"><span id="chord-three">A</span></button>
+                      <button type="button" class="btn btn-outline-dark disabled"><span id="chord-four">B</span></button>
 
                     </div><!-- END CHORD PROGRESSION BTN GROUP -->
 
-                  </div><!-- END APP CONTAINER -->
+                  </div><!-- END APP ROW -->
 
                 </div><!-- END APP TAB-CONTENT -->
 
                 <!-- ABOUT TAB-CONTENT -->
-                <div class="tab-pane fade" id="about-tab-pane" role="tabpanel" aria-labelledby="about-tab" tabindex="0">
+                <div class="tab-pane fade mb-3 pb-3" id="about-tab-pane" role="tabpanel" aria-labelledby="about-tab" tabindex="0">
 
                   <!-- ABOUT CONTAINER-->
-                  <div class="mt-4">
-                    <h1 class="h1">About <i>Groove</i></h1>
-                    <hr>
+                  <div class="my-5">
                     <p>Welcome to Groove, a simple and intuitive web application designed for musicians and enthusiasts alike.
                        Groove generates random chord progressions at the click of a button, offering an endless source of inspiration for
                        songwriting, practice, and musical exploration. </p>
@@ -85,6 +95,7 @@
                 </div><!-- END ABOUT TAB-CONTENT-->
 
               </div><!-- END TAB-CONTENT -->
+        </div><!-- END CONTENT CONTAINER-->
 
     </div><!-- END GLOBAL DIV -->
 
@@ -108,6 +119,9 @@
 
         <!-- IMPORT LOCAL GROOVE.JS -->
         <script src="./scripts/groove.js"></script>
+
+        <!-- IMPORT LOCAL VISUALIZER.JS -->
+        <script src="./scripts/visualizer.js"></script>
 
     </div><!-- END SCRIPT IMPORTS-->
 
