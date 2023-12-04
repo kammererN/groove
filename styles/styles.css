@@ -2,6 +2,13 @@ body {
     /* background-image: url(''); */
     background-color: whitesmoke;
 }
+#global-container {
+    background-color: whitesmoke;
+}
+
+#random-icon {
+    font-size: 32pt;
+}
 .nav-link {
     color:black;
 }

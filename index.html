@@ -23,7 +23,7 @@
 <!-- BODY -->
 <body>
     <!-- GLOBAL CONTAINER -->
-    <div class="container mt-4">
+    <div id="global-container" class="container mt-4">
 
             <!-- NAVBAR TABS -->
             <ul class="nav nav-underline" id="navbar" role="tablist">
@@ -52,9 +52,20 @@
 
                   <!-- APP CONTAINER -->
                   <div class="mt-4">
-                    <h1 class="h1">APP GOES HERE</h1>
-                    <button type="button" class="btn" id="play-button">PLAY</button>
-                    <button id="random-button">RANDOM</button>
+                    <button type="button" class="btn" id="random-button">
+                      <iconify-icon icon="game-icons:perspective-dice-six-faces-random" id="random-icon"></iconify-icon></button>
+
+                    <!-- CHORD PROGRESSION BTN GROUP -->
+                    <div class="btn-group" role="group" aria-label="Basic example">
+
+                      <button type="button" class="btn btn-dark" id="play-button"><iconify-icon icon="basil:play-outline"></iconify-icon></button>
+                      <button type="button" class="btn btn-outline-dark"><span>A</span></button>
+                      <button type="button" class="btn btn-outline-dark"><span>C</span></button>
+                      <button type="button" class="btn btn-outline-dark"><span>A</span></button>
+                      <button type="button" class="btn btn-outline-dark"><span>B</span></button>
+
+                    </div><!-- END CHORD PROGRESSION BTN GROUP -->
+
                   </div><!-- END APP CONTAINER -->
 
                 </div><!-- END APP TAB-CONTENT -->
@@ -64,7 +75,11 @@
 
                   <!-- ABOUT CONTAINER-->
                   <div class="mt-4">
-                    <h1 class="">ABOUT GOES HERE</h1>
+                    <h1 class="h1">About <i>Groove</i></h1>
+                    <hr>
+                    <p>Welcome to Groove, a simple and intuitive web application designed for musicians and enthusiasts alike.
+                       Groove generates random chord progressions at the click of a button, offering an endless source of inspiration for
+                       songwriting, practice, and musical exploration. </p>
                   </div><!-- END ABOUT CONTAINER -->
 
                 </div><!-- END ABOUT TAB-CONTENT-->
