@@ -1,6 +1,10 @@
 
 const playButton = document.getElementById("play-button");
 var now = Tone.now();
+const major = [0,2,2,1,2,2] ;
+const notes = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G"] ;
+const majorQuality = ["M","m","m","M","M","m"] ;
+
 const sampler = new Tone.Sampler({
   urls: {
     "C4": "C4.mp3",
@@ -381,6 +385,7 @@ function chord(bass, quality, seventh, dominant) {
 }
 
 function progression(numOfChords,scale,key) {
+  const chord = randomChords(numOfChords);
 
   if(scale=="major") {
     
@@ -392,7 +397,7 @@ function randomChords(numOfChords) {
 
   const num = [];
   for(let i = 0; i !=numOfChords; i++) {
-    num.push(Math.random() * 6 + 1);
+    num.push(Math.floor((Math.random()*6) + 1));
   }
   return num ;
 }
