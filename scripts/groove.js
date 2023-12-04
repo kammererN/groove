@@ -8,12 +8,14 @@ const sampler = new Tone.Sampler({
     "F#4": "Fs4.mp3",
     "A4": "A4.mp3",
     "C5": "C5.mp3",
-    "A5": "A5.mp3",
     "F#5": "Fs5.mp3",
     "A2": "A2.mp3",
     "D#2": "Ds2.mp3",
     "D#3": "Ds3.mp3",
-    
+    "C2": "C2.mp3",
+    "C3": "C3.mp3",
+    "D#3": "Ds3.mp3",
+    "A6": "A6.mp3",
   },
   release: 1,
   baseUrl: "https://tonejs.github.io/audio/salamander/",
@@ -26,19 +28,23 @@ playButton.addEventListener("click", () => {
 
   //sampler.triggerAttackRelease(["E2", "B3", "E3","G#3","B4","D#4"],4);
   //console.log(chord("E","major",false,false));
-  console.log(chord("E", "major", true, false));
-
-  now = Tone.now();
-
+  console.log(chord("C", "major", true, false));
   //sampler.triggerAttackRelease(chord("E","minor",true,false),4,now);
+  play();
 
-  sampler.triggerAttackRelease(chord("A", "major", false, false), 4, now);
-  sampler.triggerAttackRelease(chord("A", "major", true, false), 4, now + 3);
-  sampler.triggerAttackRelease(chord("A", "minor", false, false), 4, now + 6);
-  sampler.triggerAttackRelease(chord("A", "minor", true, false), 4, now + 9);
-  sampler.triggerAttackRelease(chord("A", "dom", false, true), 4, now + 12);
 
 })
+
+
+function play() {
+
+  now = Tone.now();
+  sampler.triggerAttackRelease(chord("E", "major", false, false), 4, now);
+  sampler.triggerAttackRelease(chord("E", "major", true, false), 4, now + 3);
+  sampler.triggerAttackRelease(chord("E", "minor", false, false), 4, now + 6);
+  sampler.triggerAttackRelease(chord("E", "minor", true, false), 4, now + 9);
+  sampler.triggerAttackRelease(chord("E", "dom", false, true), 4, now + 12);
+}
 
 function chord(bass, quality, seventh, dominant) {
   const chord = [];
@@ -96,33 +102,6 @@ function chord(bass, quality, seventh, dominant) {
         chord.push("G#3");
       } else {
         chord.push("A4");
-      }
-      break;
-
-    case "F#":
-      chord.push("F#2", "C#3", "F#3", "C#4");
-
-      if (dominant) {
-        chord.push("A#4", "E4");
-        break;
-      }
-
-      if (seventh) {
-
-        if (quality == "minor") {
-          chord.push("A4", "E4");
-
-        } else {
-          chord.push("A#4", "F4");
-        }
-        break;
-      }
-
-      chord.push("F#4");
-      if (quality == "minor") {
-        chord.push("A4");
-      } else {
-        chord.push("A#4");
       }
       break;
 
@@ -234,6 +213,186 @@ function chord(bass, quality, seventh, dominant) {
       }
       break;
 
+    case "A#":
+      chord.push("A#3", "F3", "A#4", "F4");
+
+      if (dominant) {
+        chord.push("D4", "G#4");
+        break;
+      }
+
+      if (seventh) {
+
+        if (quality == "minor") {
+          chord.push("C#4", "G#4");
+
+        } else {
+          chord.push("D4", "A5");
+        }
+        break;
+      }
+
+      chord.push("A#5");
+      if (quality == "minor") {
+        chord.push("C#4");
+      } else {
+        chord.push("D4");
+      }
+      break;
+
+    case "B":
+      chord.push("B3", "F#3", "B4", "F#4");
+
+      if (dominant) {
+        chord.push("D#4", "A5");
+        break;
+      }
+
+      if (seventh) {
+
+        if (quality == "minor") {
+          chord.push("D4", "A5");
+
+        } else {
+          chord.push("D#4", "A#5");
+        }
+        break;
+      }
+
+      chord.push("B5");
+      if (quality == "minor") {
+        chord.push("D4");
+      } else {
+        chord.push("D#4");
+      }
+      break;
+
+    case "C":
+      chord.push("C3", "G3", "C4", "G4");
+
+      if (dominant) {
+        chord.push("E4", "A#5");
+        break;
+      }
+
+      if (seventh) {
+
+        if (quality == "minor") {
+          chord.push("D#4", "A#5");
+
+        } else {
+          chord.push("E4", "B5");
+        }
+        break;
+      }
+
+      chord.push("C5");
+      if (quality == "minor") {
+        chord.push("D#3");
+      } else {
+        chord.push("E3");
+      }
+      break;
+
+    case "C#":
+      chord.push("C#3", "G#3", "C#4", "G#4");
+
+      if (dominant) {
+        chord.push("F4", "B5");
+        break;
+      }
+
+      if (seventh) {
+
+        if (quality == "minor") {
+          chord.push("E4", "B5");
+
+        } else {
+          chord.push("F4", "C5");
+        }
+        break;
+      }
+
+      chord.push("C#5");
+      if (quality == "minor") {
+        chord.push("E4");
+      } else {
+        chord.push("F4");
+      }
+      break;
+
+    case "D":
+      chord.push("D3", "A4", "D4", "A5");
+
+      if (dominant) {
+        chord.push("F#4", "C5");
+        break;
+      }
+
+      if (seventh) {
+
+        if (quality == "minor") {
+          chord.push("F4", "C5");
+
+        } else {
+          chord.push("F#4", "C#5");
+        }
+        break;
+      }
+
+      chord.push("D5");
+      if (quality == "minor") {
+        chord.push("F4");
+      } else {
+        chord.push("F#4");
+      }
+      break;
+
+      case "D#":
+        chord.push("D#3", "A#4", "D#4", "A#5");
+  
+        if (dominant) {
+          chord.push("G4", "C#5");
+          break;
+        }
+  
+        if (seventh) {
+  
+          if (quality == "minor") {
+            chord.push("F#4", "C#5");
+  
+          } else {
+            chord.push("G4", "D5");
+          }
+          break;
+        }
+  
+        chord.push("D#5");
+        if (quality == "minor") {
+          chord.push("F#4");
+        } else {
+          chord.push("G4");
+        }
+        break;
+
   }
   return chord;
+
+}
+
+function progression(numOfChords,scale,key) {
+
+  if(scale=="major") {
+    
+  }
+
+}
+
+function randomChords(numOfChords) {
+
+  const num = [];
+  for(let i = 0; i !=numOfChords; i++) {
+    num.push(Math.random() * 6 + 1);
+  }
+  return num ;
 }
