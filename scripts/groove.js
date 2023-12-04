@@ -18,8 +18,9 @@ playButton.addEventListener("click", () => {
     }
 
     // sampler.triggerAttackRelease(["E2", "B3", "E3","G#3","B4","D#4"],4);
-    sampler.triggerAttackRelease(chord("E"),4);
-	console.log(chord("E"));
+    console.log(chord("E"));
+    sampler.triggerAttackRelease(chord("E").toString(),4);
+	
 })
 
 function sleep(milliseconds) {
@@ -38,6 +39,8 @@ function chord(bass,quality,seventh) {
         case "E":
             chord = chord.concat("\"E2\",\"B3\",\"B4\"");
     }
-    return chord.concat("]") ;
+
+    chord = chord.concat("]") ;
+    return chord ;
 }
 
