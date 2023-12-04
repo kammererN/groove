@@ -39,6 +39,8 @@ playButton.addEventListener("click", () => {
 
 })
 
+// x
+
 function chord(bass, quality, seventh, dominant) {
   const chord = [];
 
