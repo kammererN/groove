@@ -3,17 +3,23 @@ const playButton = document.getElementById("play-button");
 const sound = new Tone.Synth().toDestination();
 var now ;
 
+const sampler = new Tone.Sampler({
+	urls: {
+		"C4": "C4.mp3",
+		"D#4": "Ds4.mp3",
+		"F#4": "Fs4.mp3",
+		"A4": "A4.mp3",
+	},
+	release: 1,
+	baseUrl: "https://tonejs.github.io/audio/salamander/",
+}).toDestination();
+
 playButton.addEventListener("click", () => {
     if(Tone.context.state !== "running") {
         Tone.start();
         console.log("jizz");
     }
-    now = Tone.now();
-    sound.triggerAttackRelease("E2", "4n", now);
-    sound.triggerAttackRelease("B3", "4n", now + 0.2);
-    sound.triggerAttackRelease("G#3", "4n", now + 0.4);
-    sound.triggerAttackRelease("E3", "4n", now + 0.6);
-    sound.triggerAttackRelease("B4", "4n", now + 0.8);
-    sound.triggerAttackRelease("E4", "4n", now + 1);
+
+    sampler.triggerAttackRelease(["E2", "B3", "E3","G#3","B4","D#4"],4);
     console.log(Tone.context.state);
 })
