@@ -6,6 +6,9 @@ body {
     background-color: whitesmoke;
 }
 
+#random-icon {
+    font-size: 32pt;
+}
 .nav-link {
     color:black;
 }
