@@ -1,13 +1,14 @@
 
 const playButton = document.getElementById("play-button");
 const sound = new Tone.Synth().toDestination();
-const now = Tone.now();
+var now ;
 
 playButton.addEventListener("click", () => {
     if(Tone.context.state !== "running") {
         Tone.start();
         console.log("jizz");
     }
+    now = Tone.now();
     sound.triggerAttackRelease("E2", "4n", now);
     sound.triggerAttackRelease("B3", "4n", now + 0.2);
     sound.triggerAttackRelease("G#3", "4n", now + 0.4);
