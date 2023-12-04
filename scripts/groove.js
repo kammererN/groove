@@ -7,6 +7,8 @@ const sampler = new Tone.Sampler({
     "D#4": "Ds4.mp3",
     "F#4": "Fs4.mp3",
     "A4": "A4.mp3",
+    "C5": "C5.mp3",
+    "A6": "A6.mp3",
   },
   release: 1,
   baseUrl: "https://tonejs.github.io/audio/salamander/",
@@ -52,7 +54,7 @@ function chord(bass, quality, seventh, dominant) {
           chord.push("G3", "D4");
 
         } else {
-          chord.push("G#3", "D#4")
+          chord.push("G#3", "D#4");
         }
         break;
       }
@@ -79,7 +81,7 @@ function chord(bass, quality, seventh, dominant) {
           chord.push("G#3", "D#4");
 
         } else {
-          chord.push("A4", "E4")
+          chord.push("A4", "E4");
         }
         break;
       }
@@ -106,7 +108,7 @@ function chord(bass, quality, seventh, dominant) {
           chord.push("A4", "E4");
 
         } else {
-          chord.push("A#4", "F4")
+          chord.push("A#4", "F4");
         }
         break;
       }
@@ -133,7 +135,7 @@ function chord(bass, quality, seventh, dominant) {
           chord.push("A4", "E4");
 
         } else {
-          chord.push("A#4", "F4")
+          chord.push("A#4", "F4");
         }
         break;
       }
@@ -160,7 +162,7 @@ function chord(bass, quality, seventh, dominant) {
           chord.push("A#4", "F4");
 
         } else {
-          chord.push("B4", "F#4")
+          chord.push("B4", "F#4");
         }
         break;
       }
@@ -187,7 +189,7 @@ function chord(bass, quality, seventh, dominant) {
           chord.push("B4", "F#4");
 
         } else {
-          chord.push("C4", "G4")
+          chord.push("C4", "G4");
         }
         break;
       }
@@ -214,7 +216,7 @@ function chord(bass, quality, seventh, dominant) {
           chord.push("C4", "G4");
 
         } else {
-          chord.push("C#4", "G#4")
+          chord.push("C#4", "G#4");
         }
         break;
       }
