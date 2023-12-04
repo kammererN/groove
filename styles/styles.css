@@ -1,20 +1,32 @@
 body {
     /* background-image: url('https://blog.hdwallsource.com/wp-content/uploads/2015/12/free-music-notes-wallpaper-16210-16709-hd-wallpapers.jpg'); */
-    background-color: whitesmoke;
+    background-color: white;
 }
+
 #global-container {
+    justify-content: center;
+    text-align: center;
     background-color: whitesmoke;
 }
 
-#random-icon {
-    font-size: 32pt;
+#tabbed-container {
+    color: whitesmoke;
 }
+#random-button {
+    font-size: 20pt;
+}
+#play-button {
+    font-size: 20pt;
+}
+
 .nav-link {
     color:black;
 }
+
 .nav-link:hover {
     color:black;
 }
+
 iconify-icon {
     vertical-align: -0.125em;
 }
