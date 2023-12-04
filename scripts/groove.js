@@ -1,8 +1,8 @@
 
 const playButton = document.getElementById("play-button");
 var now = Tone.now();
-const major = [0,2,2,1,2,2] ;
-const notes = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G"] ;
+const major = [0,2,4,5,7,9] ;
+const notes = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G","A","A#","B","C","C#","D","D#","E","F","F#","G","G"] ;
 const majorQuality = ["M","m","m","M","M","m"] ;
 
 const sampler = new Tone.Sampler({
@@ -50,7 +50,7 @@ function play() {
   sampler.triggerAttackRelease(chord("E", "dom", false, true), 4, now + 12);
 }
 
-function chord(bass, quality, seventh, dominant) {
+function chord(bass,quality,seventh,dominant) {
   const chord = [];
 
   switch (bass) {
@@ -386,11 +386,16 @@ function chord(bass, quality, seventh, dominant) {
 
 function progression(numOfChords,scale,key) {
   const chord = randomChords(numOfChords);
+  const chordProgression = [] ;
+  let keyIndex = notes.indexOf(key);
 
   if(scale=="major") {
-    
+    for(i=0; i < chord.length; i++) {
+      chordProgression.push(chord(notes[keyIndex+chord[i],major[chord[i]]],false,false));
+    }
   }
 
+  return chordProgression ;
 }
 
 function randomChords(numOfChords) {
