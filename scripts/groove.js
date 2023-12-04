@@ -17,9 +17,9 @@ playButton.addEventListener("click", () => {
         Tone.start();
     }
 
-    // sampler.triggerAttackRelease(["E2", "B3", "E3","G#3","B4","D#4"],4);
-    console.log(chord("E"));
-    sampler.triggerAttackRelease(chord("E").toString(),4);
+    //sampler.triggerAttackRelease(["E2", "B3", "E3","G#3","B4","D#4"],4);
+    console.log(chord("E","minor","no","dom"));
+    sampler.triggerAttackRelease(chord("E","minor","no","dom"),4);
 	
 })
 
@@ -32,15 +32,51 @@ function sleep(milliseconds) {
     }
   }
 
-function chord(bass,quality,seventh) {
-    var chord = "[" ;
+function chord(bass,quality,seventh,dominant) {
+    const chord = [];
 
     switch(bass) {
-        case "E":
-            chord = chord.concat("\"E2\",\"B3\",\"B4\"");
-    }
 
-    chord = chord.concat("]") ;
+        case "E":
+            chord.push("E2","B3","B4");
+             
+            if(dominant=="dom") {
+              chord.push("G#3","D4");
+              break;
+            }
+            if(quality == "minor") {
+              chord.push("G3");
+            } else {
+              chord.push("G#3")
+            }
+
+            if(seventh == "7") {
+              chord.push("D#4");
+            } else {
+              chord.push("E4");
+            }
+            break;
+        
+            case "F":
+              chord.push("F2","C3","F4");
+
+              if(dominant=="dom") {
+                chord.push("G#3","D#4");
+                break;
+              }
+              if(quality == "minor") {
+                chord.push("G3");
+              } else {
+                chord.push("G#3")
+              }
+  
+              if(seventh == "7") {
+                chord.push("D#4");
+              } else {
+                chord.push("E4");
+              }
+            break;
+    }
     return chord ;
 }
 
