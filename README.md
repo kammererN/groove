@@ -1,7 +1,9 @@
 # Groove: Chord Progression Generator
 
 ## Introduction
-Welcome to Groove, a simple and intuitive web application designed for musicians and enthusiasts alike. Groove generates random chord progressions at the click of a button, offering an endless source of inspiration for songwriting, practice, and musical exploration.
+Welcome to Groove, a simple and intuitive web application designed for musicians and enthusiasts alike. 
+Groove generates random chord progressions at the click of a button, offering an endless source of inspiration for 
+songwriting, practice, and musical exploration.
 
 ## Features
 - **Randomize Button**: Instantly generate a new, unique chord progression.
