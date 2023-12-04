@@ -29,7 +29,7 @@
     <!-- GLOBAL CONTAINER -->
     <div id="global-container" class="container w-50 h-50 mt-5 mb-5 rounded-5">
 
-        <!-- TAB CONTAINER -->
+        <!-- TAB CONTAINER FOR NAVBAR -->
         <div class="p-3 m-3 mt-5" id="tabbed-container">
             <!-- NAVBAR TABS -->
             <ul class="nav nav-underline justify-content-center" id="navbar" role="tablist">
@@ -49,7 +49,7 @@
                 </li><!-- END ABOUT TAB  -->
 
             </ul> <!-- END NAVBAR TABS-->
-        </div><!-- END TAB CONTAINER -->
+        </div><!-- END TAB CONTAINER FOR NAVBAR -->
 
         <!-- CONTENT CONTAINER -->
         <div class="container" id="content-container">
@@ -61,25 +61,26 @@
 
                   <!-- APP ROW -->
                   <div class="row my-3">
-                    <!-- APP BTNS COL -->
-                    <div class="pb-3">
+                      <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="0"
+                           aria-valuemin="0" aria-valuemax="100">
+                          <div class="progress-bar" style="width: 0%"></div>
+                      </div>
+                  </div><!-- END APP ROW -->
 
-                    </div><!-- END APP BTNS COL -->
-
-                    <!-- CHORD PROGRESSION COL -->
-                    <!-- END CHORD PROGRESSION COL -->
+                  <!-- BUTTONS ROW -->
+                  <div class="row pb-3">
                     <!-- CHORD PROGRESSION BTN GROUP -->
                     <div class="btn-group" role="group" aria-label="Basic example" id="app-btn-group">
 
-                      <button type="button" class="btn btn-dark" id="play-button"><iconify-icon icon="basil:play-outline"></iconify-icon></button>
-                      <button type="button" class="btn btn-outline-dark" id="random-button">
-                        <iconify-icon icon="game-icons:perspective-dice-six-faces-random"></iconify-icon></button>                      <button type="button" class="btn btn-outline-dark disabled"><span id="chord-two">C</span></button>
-                      <button type="button" class="btn btn-outline-dark disabled"><span id="chord-three">A</span></button>
-                      <button type="button" class="btn btn-outline-dark disabled"><span id="chord-four">B</span></button>
+                        <button type="button" class="btn btn-dark" id="play-button"><iconify-icon icon="basil:play-outline"></iconify-icon></button>
+                        <button type="button" class="btn btn-outline-dark" id="random-button">
+                          <iconify-icon icon="game-icons:perspective-dice-six-faces-random"></iconify-icon></button>
+                        <button type="button" class="btn btn-outline-dark disabled"><span id="chord-two">C</span></button>
+                        <button type="button" class="btn btn-outline-dark disabled"><span id="chord-three">A</span></button>
+                        <button type="button" class="btn btn-outline-dark disabled"><span id="chord-four">B</span></button>
 
-                    </div><!-- END CHORD PROGRESSION BTN GROUP -->
-
-                  </div><!-- END APP ROW -->
+                      </div><!-- END CHORD PROGRESSION BTN GROUP -->
+                  </div><!-- END BUTTONS ROW -->
 
                 </div><!-- END APP TAB-CONTENT -->
 
