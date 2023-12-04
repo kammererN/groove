@@ -2,6 +2,10 @@ body {
     /* background-image: url(''); */
     background-color: whitesmoke;
 }
+#global-container {
+    background-color: whitesmoke;
+}
+
 .nav-link {
     color:black;
 }
