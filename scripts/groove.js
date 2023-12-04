@@ -19,6 +19,7 @@ playButton.addEventListener("click", () => {
 
     // sampler.triggerAttackRelease(["E2", "B3", "E3","G#3","B4","D#4"],4);
     sampler.triggerAttackRelease(chord("E"),4);
+	console.log(chord("E"));
 })
 
 function sleep(milliseconds) {
@@ -40,4 +41,3 @@ function chord(bass,quality,seventh) {
     return chord.concat("]") ;
 }
 
-console.log(chord("E"));
