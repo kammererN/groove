@@ -8,11 +8,14 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="jquery-3.7.0" level="application" />
-    <orderEntry type="library" name="iconify-icon" level="application" />
+    <orderEntry type="library" name="particles.js" level="application" />
     <orderEntry type="library" name="tone" level="application" />
+    <orderEntry type="library" name="jquery-3.7.0" level="application" />
     <orderEntry type="library" name="iconify-icon" level="application" />
     <orderEntry type="library" name="bootstrap" level="application" />
     <orderEntry type="library" name="jquery-3.7.0" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
+    <orderEntry type="library" name="iconify-icon" level="application" />
+    <orderEntry type="library" name="tone" level="application" />
   </component>
 </module>

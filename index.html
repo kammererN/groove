@@ -25,6 +25,7 @@
 
 <!-- BODY -->
 <body>
+
     <!-- GLOBAL CONTAINER -->
     <div id="global-container" class="container w-50 h-50 mt-5 mb-5 rounded-5">
 
@@ -99,6 +100,9 @@
 
     </div><!-- END GLOBAL DIV -->
 
+    <!-- PARTICLES RENDERING DIV -->
+    <div id="particle-canvas"></div><!-- END PARTICLES RENDERING DIV -->
+
     <!-- SCRIPT IMPORTS -->
     <div>
 
@@ -114,11 +118,17 @@
         <!-- IMPORT TONE.JS VIA CDN -->
         <script src="https://cdn.jsdelivr.net/npm/tone@14.7.77/build/Tone.min.js"></script>
 
+        <!-- IMPORT PARTICLES.MIN.JS VIA LOCAL -->
+        <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
         <!-- IMPORT LOCAL SCRIPT.JS -->
         <script src='./scripts/script.js'></script>
 
         <!-- IMPORT LOCAL GROOVE.JS -->
         <script src="./scripts/groove.js"></script>
+
+        <!-- IMPORT LOCAL PARTICLES.JS -->
+        <script src="./scripts/particles_app.js"></script>
 
         <!-- IMPORT LOCAL VISUALIZER.JS -->
         <script src="./scripts/visualizer.js"></script>
