@@ -1,7 +1,5 @@
 
 const playButton = document.getElementById("play-button");
-const sound = new Tone.Synth().toDestination();
-var now ;
 
 const sampler = new Tone.Sampler({
 	urls: {
@@ -17,9 +15,29 @@ const sampler = new Tone.Sampler({
 playButton.addEventListener("click", () => {
     if(Tone.context.state !== "running") {
         Tone.start();
-        console.log("jizz");
     }
 
-    sampler.triggerAttackRelease(["E2", "B3", "E3","G#3","B4","D#4"],4);
-    console.log(Tone.context.state);
+    // sampler.triggerAttackRelease(["E2", "B3", "E3","G#3","B4","D#4"],4);
+    sampler.triggerAttackRelease(chord("E"),4);
 })
+
+function sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+      if ((new Date().getTime() - start) > milliseconds){
+        break;
+      }
+    }
+  }
+
+function chord(bass,quality,seventh) {
+    var chord = "[" ;
+
+    switch(bass) {
+        case "E":
+            chord.concat("\"E2\",\"B3\",\"B4\""); 
+    }
+    return chord.concat("]") ;
+}
+
+console.log(chord("E"));
