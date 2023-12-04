@@ -8,7 +8,12 @@ const sampler = new Tone.Sampler({
     "F#4": "Fs4.mp3",
     "A4": "A4.mp3",
     "C5": "C5.mp3",
-    "A6": "A6.mp3",
+    "A5": "A5.mp3",
+    "F#5": "Fs5.mp3",
+    "A2": "A2.mp3",
+    "D#2": "Ds2.mp3",
+    "D#3": "Ds3.mp3",
+    
   },
   release: 1,
   baseUrl: "https://tonejs.github.io/audio/salamander/",
