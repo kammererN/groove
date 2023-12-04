@@ -17,7 +17,6 @@ const sampler = new Tone.Sampler({
     "F#5": "Fs5.mp3",
     "A2": "A2.mp3",
     "D#2": "Ds2.mp3",
-    "D#3": "Ds3.mp3",
     "C2": "C2.mp3",
     "C3": "C3.mp3",
     "D#3": "Ds3.mp3",
@@ -43,8 +42,6 @@ function play(chordProgression) {
     sampler.triggerAttackRelease(chordProgression[i],duration,now + (i * timeInBetween));
   }
 }
-
-
 
 function chord(bass,quality,seventh,dominant) {
   const chord = [];
@@ -381,13 +378,13 @@ function chord(bass,quality,seventh,dominant) {
 }
 
 function progression(numOfChords,scale,key) {
-  const chord = randomChords(numOfChords);
+  const prog_chord = randomChords(numOfChords);
   const chordProgression = [] ;
   let keyIndex = notes.indexOf(key);
 
   if(scale=="major") {
-    for(i=0; i < chord.length; i++) {
-      chordProgression.push(chord(notes[keyIndex+chord[i],major[chord[i]]],false,false));
+    for(i=0; i < prog_chord.length; i++) {
+      chordProgression.push(chord(notes[keyIndex+prog_chord[i],major[prog_chord[i]]],false,false));
     }
   }
 
