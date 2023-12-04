@@ -1,3 +1,6 @@
+// IGNORE THIS FILE FOR RIGHT NOW. CURRENTLY A RELIC OF THE TEMPLATE
+// IGNORE THIS FILE FOR RIGHT NOW. CURRENTLY A RELIC OF THE TEMPLATE
+
 $(document).ready(function() {
     $('#build').click(function() {
                 var instructions = $('#instructions').val();
