@@ -4,6 +4,8 @@ var now = Tone.now();
 const major = [0,2,4,5,7,9] ;
 const notes = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G","A","A#","B","C","C#","D","D#","E","F","F#","G","G"] ;
 const majorQuality = ["M","m","m","M","M","m"] ;
+const duration = 4 ;
+const timeInBetween = 3 ;
 
 const sampler = new Tone.Sampler({
   urls: {
@@ -29,26 +31,20 @@ playButton.addEventListener("click", () => {
   if (Tone.context.state !== "running") {
     Tone.start();
   }
-
-  //sampler.triggerAttackRelease(["E2", "B3", "E3","G#3","B4","D#4"],4);
-  //console.log(chord("E","major",false,false));
-  console.log(chord("C", "major", true, false));
-  //sampler.triggerAttackRelease(chord("E","minor",true,false),4,now);
-  play();
-
-
+  
+  play(progression(4,"major","E"));
 })
 
 
-function play() {
+function play(chordProgression) {
 
   now = Tone.now();
-  sampler.triggerAttackRelease(chord("E", "major", false, false), 4, now);
-  sampler.triggerAttackRelease(chord("E", "major", true, false), 4, now + 3);
-  sampler.triggerAttackRelease(chord("E", "minor", false, false), 4, now + 6);
-  sampler.triggerAttackRelease(chord("E", "minor", true, false), 4, now + 9);
-  sampler.triggerAttackRelease(chord("E", "dom", false, true), 4, now + 12);
+  for(i = 0; i<chordProgression.length; i++) {
+    sampler.triggerAttackRelease(chordProgression[i],duration,now + (i * timeInBetween));
+  }
 }
+
+
 
 function chord(bass,quality,seventh,dominant) {
   const chord = [];
@@ -406,3 +402,4 @@ function randomChords(numOfChords) {
   }
   return num ;
 }
+
