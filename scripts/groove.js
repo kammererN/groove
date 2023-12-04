@@ -9,4 +9,5 @@ playButton.addEventListener("click", () => {
         Tone.start();
     }
     sound.triggerAttackRelease("E2", "4n");
+    console.log(Tone.context.state);
 })
