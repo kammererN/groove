@@ -5,9 +5,12 @@ let now = Tone.now();
 const major = [0, 2, 4, 5, 7, 9, 11];
 const notes = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
 const majorQuality = ["M", "minor", "minor", "M", "M", "minor", "minor"];
-const duration = 1.6;
-const timeInBetween = 1.4;
-let chordNumerals = [0,1,2,3,4,5,6]
+const duration = 1.4;
+const timeInBetween = 1.2;
+const arpeggioSwiftness = 6 ;
+const arpeggioTimeinBetween = duration / arpeggioSwiftness ;
+const arpeggioDuration = timeInBetween / arpeggioSwiftness ;
+let chordNumerals = [6,5,4,3,2,1,0] ;
 
 const sampler = new Tone.Sampler({
   urls: {
@@ -34,7 +37,8 @@ playButton.addEventListener("click", () => {
   if (Tone.context.state !== "running") {
     Tone.start();
   }
-  play(progression("major", "E",false));
+  // play(progression("major", "E",true));
+  playArpeggio(progression("major","E",true));
 })
 
 randomButton.addEventListener("click", () => {
@@ -47,6 +51,14 @@ function play(chordProgression) {
   now = Tone.now();
   for (let i = 0; i < chordProgression.length; i++) {
     sampler.triggerAttackRelease(chordProgression[i], duration, now + (i * timeInBetween));
+  }
+}
+
+function playArpeggio(chordProgression) {
+  let arpeggioArray = [].concat.apply([],chordProgression);
+  now = Tone.now();
+  for(let i = 0 ; i < arpeggioArray.length; i++) {
+    sampler.triggerAttackRelease(arpeggioArray[i],arpeggioDuration, now + (i * arpeggioTimeinBetween));
   }
 }
 
@@ -391,21 +403,17 @@ function progression(scale, key, seventh) {
   if (scale === "major") {
     if (seventh) {
       for(let i = 0; i< chordNumerals.length; i++) {
-        if(chordNumerals[i]===5) {
-          chordProgression.push(chord(notes[keyIndex + chordNumerals[i]], majorQuality[chordNumerals[i]],false,true));
+        if(chordNumerals[i]===4) {
+          chordProgression.push(chord(notes[keyIndex + major[chordNumerals[i]]], majorQuality[chordNumerals[i]],false,true));
         } else {
-          chordProgression.push(chord(notes[keyIndex + chordNumerals[i]], majorQuality[chordNumerals[i]],true,false));
+          chordProgression.push(chord(notes[keyIndex + major[chordNumerals[i]]], majorQuality[chordNumerals[i]],true,false));
         }
-        console.log(chordProgression[i]);
-        console.log("quality " + majorQuality[chordNumerals[i]]);
       }
     } else {
 
       console.log(chordNumerals);
       for (let i = 0; i < chordNumerals.length; i++) {
         chordProgression.push(chord(notes[keyIndex + major[chordNumerals[i]]], majorQuality[chordNumerals[i]], false, false));
-        console.log(chordProgression[i]);
-        console.log("quality " + majorQuality[chordNumerals[i]]);
       }
     }
   }
