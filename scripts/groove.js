@@ -30,6 +30,7 @@ const sampler = new Tone.Sampler({
   // https://tonejs.github.io/audio/salamander/
 }).toDestination();
 
+// Plays audio runtime
 function play(chordProgression) {
 
   now = Tone.now();
@@ -38,6 +39,7 @@ function play(chordProgression) {
   }
 }
 
+// Plays arpeggio
 function playArpeggio(chordProgression) {
   let arpeggioArray = [].concat.apply([],chordProgression);
   now = Tone.now();
@@ -45,6 +47,9 @@ function playArpeggio(chordProgression) {
     sampler.triggerAttackRelease(arpeggioArray[i],arpeggioDuration, now + (i * arpeggioTimeinBetween));
   }
 }
+
+// Stops audio runtime.
+function pause () {}
 
 function chord(bass, quality, seventh, dominant) {
   const chord = [];
