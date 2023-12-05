@@ -50,8 +50,31 @@ $("#random-btn").on("click", function ( ) {
 })
 
 /*
-  Random B
+  7THS Btn Click Event Listener
  */
+$("#").on("click", function () {
+
+})
+/*
+  Duration Of Chord Btn Click Event Listener
+ */
+$("#").on("click", function () {
+
+})
+
+/*
+  Length Of Chord Btn Click Event Listener
+ */
+$("#").on("click", function () {
+
+})
+
+/*
+  Number of Chord Btn Click Event Listener
+ */
+$("#").on("click", function () {
+
+})
 
 function play(chordProgression) {
 
