@@ -1,13 +1,16 @@
 // Play Btn Click Event Listener
-$("#play-btn").on("click", function( ) {
-    console.log("Play");
+$("#play-btn").on("click", function() {
+    console.log("Play, Transport state: " + Tone.Transport.state);
     if (Tone.context.state !== "running") {
-        Tone.start();
+        console.log("Starting transport");
+        Tone.Transport.start();
+    } else {
+        console.log("Stopping transport");
+        Tone.Transport.stop();
     }
-    // play(progression("major", "E",true));
-    playArpeggio(progression("major","E",true));
-
-})
+    play(progression("major", "E",true));
+    // playArpeggio(progression("major", "E", true));
+});
 
 // Random Btn Click Event Listener
 $("#random-btn").on("click", function ( ) {
@@ -18,5 +21,5 @@ $("#random-btn").on("click", function ( ) {
 
 // Advanced Menu Btn Event Listener
 $("#advanced-menu-btn").on("click", function () {
-    console.log("Settings" );
+    console.log("Settings");
 })
