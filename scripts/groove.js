@@ -2,12 +2,12 @@
 const playButton = document.getElementById("play-button");
 const randomButton = document.getElementById("random-button");
 let now = Tone.now();
-const major = [0, 2, 4, 5, 7, 9];
-const notes = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
-const majorQuality = ["M", "minor", "minor", "M", "M", "minor"];
+const major = [0, 2, 4, 5, 7, 9, 11];
+const notes = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
+const majorQuality = ["M", "minor", "minor", "M", "M", "minor", "minor"];
 const duration = 1.6;
 const timeInBetween = 1.4;
-let chordNumerals = randomChords(6);
+let chordNumerals = [0,1,2,3,4,5,6]
 
 const sampler = new Tone.Sampler({
   urls: {
@@ -396,13 +396,16 @@ function progression(scale, key, seventh) {
         } else {
           chordProgression.push(chord(notes[keyIndex + chordNumerals[i]], majorQuality[chordNumerals[i]],true,false));
         }
+        console.log(chordProgression[i]);
+        console.log("quality " + majorQuality[chordNumerals[i]]);
       }
     } else {
 
       console.log(chordNumerals);
       for (let i = 0; i < chordNumerals.length; i++) {
-        chordProgression.push(chord(notes[keyIndex + chordNumerals[i]], majorQuality[chordNumerals[i]], false, false));
+        chordProgression.push(chord(notes[keyIndex + major[chordNumerals[i]]], majorQuality[chordNumerals[i]], false, false));
         console.log(chordProgression[i]);
+        console.log("quality " + majorQuality[chordNumerals[i]]);
       }
     }
   }
