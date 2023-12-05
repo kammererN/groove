@@ -1,6 +1,3 @@
-
-const playButton = document.getElementById("play-button");
-const randomButton = document.getElementById("random-button");
 let now = Tone.now();
 const major = [0, 2, 4, 5, 7, 9, 11];
 const notes = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
@@ -33,7 +30,10 @@ const sampler = new Tone.Sampler({
   // https://tonejs.github.io/audio/salamander/
 }).toDestination();
 
-playButton.addEventListener("click", () => {
+/*
+  Play Btn Click Event Listener
+ */
+$("#play-btn").on("click", function( ) {
   if (Tone.context.state !== "running") {
     Tone.start();
   }
@@ -41,10 +41,17 @@ playButton.addEventListener("click", () => {
   playArpeggio(progression("major","E",true));
 })
 
-randomButton.addEventListener("click", () => {
+/*
+  Random Btn Click Event Listener
+ */
+$("#random-btn").on("click", function ( ) {
   chordNumerals = randomChords(6);
+  console.log("New chord progression: " + chordNumerals);
 })
 
+/*
+  Random B
+ */
 
 function play(chordProgression) {
 

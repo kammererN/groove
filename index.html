@@ -18,8 +18,11 @@
     <!-- IMPORT STYLES.CSS -->
     <link rel="stylesheet" type="text/css" href="./styles/styles.css">
 
-    <!-- IMPORT GROOVESTYLE.CSS -->
-    <!--link rel="stylesheet" type="text/css" href="./styles/groovestyle.css"-->
+    <!-- IMPORT OSWALD FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Oswald&display=swap" rel="stylesheet">
+  <script src="scripts/script.js"></script>
+
+  <!-- link rel="stylesheet" href="./styles/groovestyle.css -->"
 
 </head><!-- END HEAD -->
 
@@ -73,12 +76,29 @@
                     <!-- CHORD PROGRESSION BTN GROUP -->
                     <div class="btn-group" role="group" aria-label="Basic example" id="app-btn-group">
 
-                        <button type="button" class="btn btn-dark" id="play-button"><iconify-icon icon="basil:play-outline"></iconify-icon></button>
-                        <button type="button" class="btn btn-outline-dark" id="random-button">
-                          <iconify-icon icon="game-icons:perspective-dice-six-faces-random"></iconify-icon></button>
-                        <button type="button" class="btn btn-outline-dark disabled"><span id="chord-two">C</span></button>
-                        <button type="button" class="btn btn-outline-dark disabled"><span id="chord-three">A</span></button>
-                        <button type="button" class="btn btn-outline-dark disabled"><span id="chord-four">B</span></button>
+                        <!-- PLAY BTN -->
+                        <button type="button" class="btn btn-dark" id="play-btn">
+                          <iconify-icon icon="basil:play-outline"></iconify-icon></button><!-- END PLAY BTN -->
+
+                        <!-- RND BTN -->
+                        <button type="button" class="btn btn-outline-dark" id="random-btn">
+                          <iconify-icon icon="game-icons:perspective-dice-six-faces-random"></iconify-icon></button><!-- RND BTN -->
+
+                        <!-- 7THS BTN -->
+                        <button type="button" class="btn btn-outline-dark" id="sevenths-menu-btn">
+                          7ths</button><!-- END 7THS BTN -->
+
+                        <!-- DURATION OF CHORD BTN -->
+                        <button type="button" class="btn btn-outline-dark" id="duration-btn">
+                          <iconify-icon icon="basil:clock-outline"></iconify-icon></button><!-- END DURATION BTN -->
+
+                        <!-- LENGTH BETWEEN CHORDS BTN -->
+                        <button type="button" class="btn btn-outline-dark" id="length-btn">
+                          <iconify-icon icon="iconoir:truck-length"></iconify-icon></button><!-- END LENGTH BETWEEN CHORDS BTN -->
+
+                        <!-- NUMBER OF CHORDS BTN  -->
+                        <button type="button" class="btn btn-outline-dark" id="number-btn">
+                          <iconify-icon icon="tabler:number"></iconify-icon></button><!-- END NUMBER OF CHORDS BTN -->
 
                       </div><!-- END CHORD PROGRESSION BTN GROUP -->
                   </div><!-- END BUTTONS ROW -->
