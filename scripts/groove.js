@@ -40,6 +40,7 @@ function play(chordProgression) {
     for (let i = 0; i < chordProgression.length; i++) {
         sampler.triggerAttackRelease(chordProgression[i], duration, now + (i * timeInBetween));
     }
+    let audioTime =  Math.floor(now + ((chordProgression.length - 1) * timeInBetween) * 1000);
 }
 
 // Plays arpeggio
@@ -52,7 +53,7 @@ function playArpeggio(chordProgression) {
     now = Tone.now();
     for(let i = 0 ; i < arpeggioArray.length; i++) {
         sampler.triggerAttackRelease(arpeggioArray[i],arpeggioDuration, now + (i * arpeggioTimeinBetween));
-    }
+    } 
     // Calculates and stores audio time
     let audioTime =  Math.floor(now + ((arpeggioArray.length - 1) * arpeggioTimeinBetween) * 1000);
     console.log(audioTime);
