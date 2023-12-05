@@ -20,7 +20,7 @@ body {
 }
 
 #tabbed-container {
-    color: whitesmoke;
+    color: ghostwhite;
 }
 #random-btn {
     font-size: 20pt;
@@ -37,6 +37,10 @@ body {
     color: black;
 }
 
+.btn-group-alt-text-color {
+    color: ghostwhite;
+}
+
 .nav-link {
     color:black;
 }
@@ -45,6 +49,7 @@ body {
     color:black;
 }
 
-iconify-icon {
+
+conify-icon {
     vertical-align: -0.125em;
 }
