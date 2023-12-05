@@ -33,10 +33,16 @@ const sampler = new Tone.Sampler({
 // Plays audio runtime
 function play(chordProgression) {
 
+    // Handles UI Play Btn transition
+    playToPauseHelper()
+
     now = Tone.now();
     for (let i = 0; i < chordProgression.length; i++) {
         sampler.triggerAttackRelease(chordProgression[i], duration, now + (i * timeInBetween));
     }
+
+    // Calculate and stores the audio time
+    let audioTime = Math.floor(now + )
 }
 
 // Plays arpeggio
