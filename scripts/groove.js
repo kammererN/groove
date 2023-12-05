@@ -2,12 +2,12 @@
 const playButton = document.getElementById("play-button");
 const randomButton = document.getElementById("random-button");
 var now = Tone.now();
-const major = [0,2,4,5,7,9] ;
-const notes = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G","A","A#","B","C","C#","D","D#","E","F","F#","G","G"] ;
-const majorQuality = ["M","m","m","M","M","m"] ;
-const duration = 2 ;
-const timeInBetween = 2.1 ;
-let chordNumerals = randomChords(4);
+const major = [0, 2, 4, 5, 7, 9];
+const notes = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
+const majorQuality = ["M", "m", "m", "M", "M", "m"];
+const duration = 2;
+const timeInBetween = 2.1;
+let chordNumerals = randomChords(6);
 
 const sampler = new Tone.Sampler({
   urls: {
@@ -34,8 +34,8 @@ playButton.addEventListener("click", () => {
   if (Tone.context.state !== "running") {
     Tone.start();
   }
-  
-  play(progression("major","E"));
+  play(progression("major", "E",true));
+  console.log(progression("major", "E",true));
 })
 
 randomButton.addEventListener("click", () => {
@@ -47,12 +47,12 @@ randomButton.addEventListener("click", () => {
 function play(chordProgression) {
 
   now = Tone.now();
-  for(i = 0; i<chordProgression.length; i++) {
-    sampler.triggerAttackRelease(chordProgression[i],duration,now + (i * timeInBetween));
+  for (i = 0; i < chordProgression.length; i++) {
+    sampler.triggerAttackRelease(chordProgression[i], duration, now + (i * timeInBetween));
   }
 }
 
-function chord(bass,quality,seventh,dominant) {
+function chord(bass, quality, seventh, dominant) {
   const chord = [];
 
   switch (bass) {
@@ -354,57 +354,69 @@ function chord(bass,quality,seventh,dominant) {
       }
       break;
 
-      case "D#":
-        chord.push("D#3", "A#4", "D#4", "A#5");
-  
-        if (dominant) {
-          chord.push("G4", "C#5");
-          break;
-        }
-  
-        if (seventh) {
-  
-          if (quality == "minor") {
-            chord.push("F#4", "C#5");
-  
-          } else {
-            chord.push("G4", "D5");
-          }
-          break;
-        }
-  
-        chord.push("D#5");
+    case "D#":
+      chord.push("D#3", "A#4", "D#4", "A#5");
+
+      if (dominant) {
+        chord.push("G4", "C#5");
+        break;
+      }
+
+      if (seventh) {
+
         if (quality == "minor") {
-          chord.push("F#4");
+          chord.push("F#4", "C#5");
+
         } else {
-          chord.push("G4");
+          chord.push("G4", "D5");
         }
         break;
+      }
+
+      chord.push("D#5");
+      if (quality == "minor") {
+        chord.push("F#4");
+      } else {
+        chord.push("G4");
+      }
+      break;
 
   }
   return chord;
 
 }
 
-function progression(scale,key) {
-  const chordProgression = [] ;
+function progression(scale, key, seventh) {
+  const chordProgression = [];
   let keyIndex = notes.indexOf(key);
 
-  if(scale=="major") {
-    for(i=0; i < chordNumerals.length; i++) {
-      chordProgression.push(chord(notes[keyIndex+chordNumerals[i],major[chordNumerals[i]]],false,false));
+  if (scale == "major") {
+    if (seventh) {
+      for(i = 0; i< chordNumerals.length; i++) {
+        if(chordNumerals[i]==5) {
+          chordProgression.push(chord(notes[keyIndex + chordNumerals[i], major[chordNumerals[i]]],false,true));
+        } else {
+          console.log("we did it");
+          chordProgression.push(chord(notes[keyIndex + chordNumerals[i], major[chordNumerals[i]]],true,false));
+        }
+      }
+    } else {
+
+      for (i = 0; i < chordNumerals.length; i++) {
+        chordProgression.push(chord(notes[keyIndex + chordNumerals[i], major[chordNumerals[i]]], false, false));
+      }
     }
   }
 
-  return chordProgression ;
+  return chordProgression;
 }
 
 function randomChords(numOfChords) {
 
   const num = [];
-  for(let i = 0; i !=numOfChords; i++) {
-    num.push(Math.floor((Math.random()*6) + 1));
+  for (let i = 0; i != numOfChords; i++) {
+    num.push(Math.floor((Math.random() * 6) + 1));
   }
-  return num ;
+  return num;
 }
 
