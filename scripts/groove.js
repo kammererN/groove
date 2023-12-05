@@ -37,6 +37,10 @@ function play(chordProgression) {
     for (let i = 0; i < chordProgression.length; i++) {
         sampler.triggerAttackRelease(chordProgression[i], duration, now + (i * timeInBetween));
     }
+    let audioTime = Math.floor(now + ((chordProgression.length-1) * timeInBetween) * 1000);
+
+    // Handles UI Pause Btn transition
+    setTimeout(pauseToPlayHelper, audioTime);
 }
 
 // Plays arpeggio
