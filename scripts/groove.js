@@ -34,6 +34,7 @@ const sampler = new Tone.Sampler({
   Play Btn Click Event Listener
  */
 $("#play-btn").on("click", function( ) {
+  console.log("Play");
   if (Tone.context.state !== "running") {
     Tone.start();
   }
@@ -45,15 +46,16 @@ $("#play-btn").on("click", function( ) {
   Random Btn Click Event Listener
  */
 $("#random-btn").on("click", function ( ) {
+  console.log("Shuffle")
   chordNumerals = randomChords(6);
   console.log("New chord progression: " + chordNumerals);
 })
 
 /*
-  7THS Btn Click Event Listener
+  Advanced Settings Modal Btn Click Event Listener
  */
-$("#").on("click", function () {
-
+$("#advanced-menu-btn").on("click", function () {
+  console.log("Settings");
 })
 /*
   Duration Of Chord Btn Click Event Listener

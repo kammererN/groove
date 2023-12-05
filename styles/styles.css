@@ -29,20 +29,8 @@ body {
     font-size: 20pt;
 }
 
-#sevenths-menu-btn {
-
-}
-
-#duration-btn {
-
-}
-
-#length-btn {
-
-}
-
-#number-btn {
-
+#advanced-menu-btn {
+    font-size: 20pt;
 }
 
 .nav-link {
