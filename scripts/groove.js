@@ -1,12 +1,12 @@
 
 const playButton = document.getElementById("play-button");
 const randomButton = document.getElementById("random-button");
-var now = Tone.now();
+let now = Tone.now();
 const major = [0, 2, 4, 5, 7, 9];
 const notes = ["A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G", "A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"];
-const majorQuality = ["M", "m", "m", "M", "M", "m"];
-const duration = 2;
-const timeInBetween = 2.1;
+const majorQuality = ["M", "minor", "minor", "M", "M", "minor"];
+const duration = 1.6;
+const timeInBetween = 1.4;
 let chordNumerals = randomChords(6);
 
 const sampler = new Tone.Sampler({
@@ -34,20 +34,18 @@ playButton.addEventListener("click", () => {
   if (Tone.context.state !== "running") {
     Tone.start();
   }
-  play(progression("major", "E",true));
-  console.log(progression("major", "E",true));
+  play(progression("major", "E",false));
 })
 
 randomButton.addEventListener("click", () => {
   chordNumerals = randomChords(6);
-  console.log(chordNumerals);
 })
 
 
 function play(chordProgression) {
 
   now = Tone.now();
-  for (i = 0; i < chordProgression.length; i++) {
+  for (let i = 0; i < chordProgression.length; i++) {
     sampler.triggerAttackRelease(chordProgression[i], duration, now + (i * timeInBetween));
   }
 }
@@ -67,7 +65,7 @@ function chord(bass, quality, seventh, dominant) {
 
       if (seventh) {
 
-        if (quality == "minor") {
+        if (quality === "minor") {
           chord.push("G3", "D4");
 
         } else {
@@ -77,7 +75,7 @@ function chord(bass, quality, seventh, dominant) {
       }
 
       chord.push("E4");
-      if (quality == "minor") {
+      if (quality === "minor") {
         chord.push("G3");
       } else {
         chord.push("G#3");
@@ -94,7 +92,7 @@ function chord(bass, quality, seventh, dominant) {
 
       if (seventh) {
 
-        if (quality == "minor") {
+        if (quality === "minor") {
           chord.push("G#3", "D#4");
 
         } else {
@@ -104,7 +102,7 @@ function chord(bass, quality, seventh, dominant) {
       }
 
       chord.push("F4");
-      if (quality == "minor") {
+      if (quality === "minor") {
         chord.push("G#3");
       } else {
         chord.push("A4");
@@ -121,7 +119,7 @@ function chord(bass, quality, seventh, dominant) {
 
       if (seventh) {
 
-        if (quality == "minor") {
+        if (quality === "minor") {
           chord.push("A4", "E4");
 
         } else {
@@ -131,7 +129,7 @@ function chord(bass, quality, seventh, dominant) {
       }
 
       chord.push("F#4");
-      if (quality == "minor") {
+      if (quality === "minor") {
         chord.push("A4");
       } else {
         chord.push("A#4");
@@ -148,7 +146,7 @@ function chord(bass, quality, seventh, dominant) {
 
       if (seventh) {
 
-        if (quality == "minor") {
+        if (quality === "minor") {
           chord.push("A#4", "F4");
 
         } else {
@@ -158,7 +156,7 @@ function chord(bass, quality, seventh, dominant) {
       }
 
       chord.push("G4");
-      if (quality == "minor") {
+      if (quality === "minor") {
         chord.push("A#4");
       } else {
         chord.push("B4");
@@ -175,7 +173,7 @@ function chord(bass, quality, seventh, dominant) {
 
       if (seventh) {
 
-        if (quality == "minor") {
+        if (quality === "minor") {
           chord.push("B4", "F#4");
 
         } else {
@@ -185,7 +183,7 @@ function chord(bass, quality, seventh, dominant) {
       }
 
       chord.push("G#4");
-      if (quality == "minor") {
+      if (quality === "minor") {
         chord.push("B4");
       } else {
         chord.push("C4");
@@ -202,7 +200,7 @@ function chord(bass, quality, seventh, dominant) {
 
       if (seventh) {
 
-        if (quality == "minor") {
+        if (quality === "minor") {
           chord.push("C4", "G4");
 
         } else {
@@ -212,7 +210,7 @@ function chord(bass, quality, seventh, dominant) {
       }
 
       chord.push("A5");
-      if (quality == "minor") {
+      if (quality === "minor") {
         chord.push("C4");
       } else {
         chord.push("C#4");
@@ -229,7 +227,7 @@ function chord(bass, quality, seventh, dominant) {
 
       if (seventh) {
 
-        if (quality == "minor") {
+        if (quality === "minor") {
           chord.push("C#4", "G#4");
 
         } else {
@@ -239,7 +237,7 @@ function chord(bass, quality, seventh, dominant) {
       }
 
       chord.push("A#5");
-      if (quality == "minor") {
+      if (quality === "minor") {
         chord.push("C#4");
       } else {
         chord.push("D4");
@@ -256,7 +254,7 @@ function chord(bass, quality, seventh, dominant) {
 
       if (seventh) {
 
-        if (quality == "minor") {
+        if (quality === "minor") {
           chord.push("D4", "A5");
 
         } else {
@@ -266,7 +264,7 @@ function chord(bass, quality, seventh, dominant) {
       }
 
       chord.push("B5");
-      if (quality == "minor") {
+      if (quality === "minor") {
         chord.push("D4");
       } else {
         chord.push("D#4");
@@ -283,7 +281,7 @@ function chord(bass, quality, seventh, dominant) {
 
       if (seventh) {
 
-        if (quality == "minor") {
+        if (quality === "minor") {
           chord.push("D#4", "A#5");
 
         } else {
@@ -293,7 +291,7 @@ function chord(bass, quality, seventh, dominant) {
       }
 
       chord.push("C5");
-      if (quality == "minor") {
+      if (quality === "minor") {
         chord.push("D#3");
       } else {
         chord.push("E3");
@@ -310,7 +308,7 @@ function chord(bass, quality, seventh, dominant) {
 
       if (seventh) {
 
-        if (quality == "minor") {
+        if (quality === "minor") {
           chord.push("E4", "B5");
 
         } else {
@@ -320,7 +318,7 @@ function chord(bass, quality, seventh, dominant) {
       }
 
       chord.push("C#5");
-      if (quality == "minor") {
+      if (quality === "minor") {
         chord.push("E4");
       } else {
         chord.push("F4");
@@ -337,7 +335,7 @@ function chord(bass, quality, seventh, dominant) {
 
       if (seventh) {
 
-        if (quality == "minor") {
+        if (quality === "minor") {
           chord.push("F4", "C5");
 
         } else {
@@ -347,7 +345,7 @@ function chord(bass, quality, seventh, dominant) {
       }
 
       chord.push("D5");
-      if (quality == "minor") {
+      if (quality === "minor") {
         chord.push("F4");
       } else {
         chord.push("F#4");
@@ -364,7 +362,7 @@ function chord(bass, quality, seventh, dominant) {
 
       if (seventh) {
 
-        if (quality == "minor") {
+        if (quality === "minor") {
           chord.push("F#4", "C#5");
 
         } else {
@@ -374,7 +372,7 @@ function chord(bass, quality, seventh, dominant) {
       }
 
       chord.push("D#5");
-      if (quality == "minor") {
+      if (quality === "minor") {
         chord.push("F#4");
       } else {
         chord.push("G4");
@@ -390,20 +388,21 @@ function progression(scale, key, seventh) {
   const chordProgression = [];
   let keyIndex = notes.indexOf(key);
 
-  if (scale == "major") {
+  if (scale === "major") {
     if (seventh) {
-      for(i = 0; i< chordNumerals.length; i++) {
-        if(chordNumerals[i]==5) {
-          chordProgression.push(chord(notes[keyIndex + chordNumerals[i], major[chordNumerals[i]]],false,true));
+      for(let i = 0; i< chordNumerals.length; i++) {
+        if(chordNumerals[i]===5) {
+          chordProgression.push(chord(notes[keyIndex + chordNumerals[i]], majorQuality[chordNumerals[i]],false,true));
         } else {
-          console.log("we did it");
-          chordProgression.push(chord(notes[keyIndex + chordNumerals[i], major[chordNumerals[i]]],true,false));
+          chordProgression.push(chord(notes[keyIndex + chordNumerals[i]], majorQuality[chordNumerals[i]],true,false));
         }
       }
     } else {
 
-      for (i = 0; i < chordNumerals.length; i++) {
-        chordProgression.push(chord(notes[keyIndex + chordNumerals[i], major[chordNumerals[i]]], false, false));
+      console.log(chordNumerals);
+      for (let i = 0; i < chordNumerals.length; i++) {
+        chordProgression.push(chord(notes[keyIndex + chordNumerals[i]], majorQuality[chordNumerals[i]], false, false));
+        console.log(chordProgression[i]);
       }
     }
   }
@@ -414,7 +413,7 @@ function progression(scale, key, seventh) {
 function randomChords(numOfChords) {
 
   const num = [];
-  for (let i = 0; i != numOfChords; i++) {
+  for (let i = 0; i !== numOfChords; i++) {
     num.push(Math.floor((Math.random() * 6) + 1));
   }
   return num;
