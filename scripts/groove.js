@@ -6,7 +6,7 @@ const major = [0,2,4,5,7,9] ;
 const notes = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G","A","A#","B","C","C#","D","D#","E","F","F#","G","G"] ;
 const majorQuality = ["M","m","m","M","M","m"] ;
 const duration = 2 ;
-const timeInBetween = 1 ;
+const timeInBetween = 2.1 ;
 let chordNumerals = randomChords(4);
 
 const sampler = new Tone.Sampler({
