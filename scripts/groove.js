@@ -40,9 +40,6 @@ function play(chordProgression) {
     for (let i = 0; i < chordProgression.length; i++) {
         sampler.triggerAttackRelease(chordProgression[i], duration, now + (i * timeInBetween));
     }
-
-    // Calculate and stores the audio time
-    let audioTime = Math.floor(now + )
 }
 
 // Plays arpeggio
