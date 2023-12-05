@@ -41,11 +41,19 @@ function play(chordProgression) {
 
 // Plays arpeggio
 function playArpeggio(chordProgression) {
+  const playBtnJQuerySelector = "#play-btn"
+
+  // Disables Play Btn While audio is running
+  $(playBtnJQuerySelector).prop("disabled", true);
+
   let arpeggioArray = [].concat.apply([],chordProgression);
   now = Tone.now();
   for(let i = 0 ; i < arpeggioArray.length; i++) {
     sampler.triggerAttackRelease(arpeggioArray[i],arpeggioDuration, now + (i * arpeggioTimeinBetween));
   }
+
+  // Enables play btn after audio end
+  $(playBtnJQuerySelector).prop("disabled", false)
 }
 
 // Stops audio runtime.
