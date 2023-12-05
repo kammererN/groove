@@ -50,9 +50,12 @@ function playArpeggio(chordProgression) {
     for(let i = 0 ; i < arpeggioArray.length; i++) {
         sampler.triggerAttackRelease(arpeggioArray[i],arpeggioDuration, now + (i * arpeggioTimeinBetween));
     }
+    // Calculates and stores audio time
+    let audioTime =  Math.floor(now + ((arpeggioArray.length - 1) * arpeggioTimeinBetween) * 1000);
+    console.log(audioTime);
 
     // Handles UI Pause Btn transition
-    //pauseToPlayHelper()
+    setTimeout(pauseToPlayHelper, audioTime);
 
 }
 
