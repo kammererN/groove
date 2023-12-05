@@ -1,11 +1,13 @@
 
 const playButton = document.getElementById("play-button");
+const randomButton = document.getElementById("random-button");
 var now = Tone.now();
 const major = [0,2,4,5,7,9] ;
 const notes = ["A","A#","B","C","C#","D","D#","E","F","F#","G","G","A","A#","B","C","C#","D","D#","E","F","F#","G","G"] ;
 const majorQuality = ["M","m","m","M","M","m"] ;
-const duration = 4 ;
-const timeInBetween = 3 ;
+const duration = 2 ;
+const timeInBetween = 1 ;
+let chordNumerals = randomChords(4);
 
 const sampler = new Tone.Sampler({
   urls: {
@@ -24,6 +26,8 @@ const sampler = new Tone.Sampler({
   },
   release: 1,
   baseUrl: "https://tonejs.github.io/audio/salamander/",
+  // https://nbrosowsky.github.io/tonejs-instruments/samples/guitar-electric/
+  // https://tonejs.github.io/audio/salamander/
 }).toDestination();
 
 playButton.addEventListener("click", () => {
@@ -31,7 +35,12 @@ playButton.addEventListener("click", () => {
     Tone.start();
   }
   
-  play(progression(4,"major","E"));
+  play(progression("major","E"));
+})
+
+randomButton.addEventListener("click", () => {
+  chordNumerals = randomChords(6);
+  console.log(chordNumerals);
 })
 
 
@@ -377,14 +386,13 @@ function chord(bass,quality,seventh,dominant) {
 
 }
 
-function progression(numOfChords,scale,key) {
-  const prog_chord = randomChords(numOfChords);
+function progression(scale,key) {
   const chordProgression = [] ;
   let keyIndex = notes.indexOf(key);
 
   if(scale=="major") {
-    for(i=0; i < prog_chord.length; i++) {
-      chordProgression.push(chord(notes[keyIndex+prog_chord[i],major[prog_chord[i]]],false,false));
+    for(i=0; i < chordNumerals.length; i++) {
+      chordProgression.push(chord(notes[keyIndex+chordNumerals[i],major[chordNumerals[i]]],false,false));
     }
   }
 
