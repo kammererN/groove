@@ -1,6 +1,6 @@
 # Groove: Chord Progression Generator
 
-kammerern.github.io/groove/index.html
+[Click here to view the website!](https://kammerern.github.io/groove/index.html)
 
 ## Introduction
 Welcome to Groove, a simple and intuitive web application designed for musicians and enthusiasts alike. 
@@ -20,9 +20,9 @@ songwriting, practice, and musical exploration.
 4. **Repeat**: Generate and listen to as many progressions as you like!
 
 ## Technology Stack
-- **Frontend**: [Specify technologies - e.g., HTML, CSS, JavaScript, React]
-- **Backend**: [Specify technologies - e.g., Node.js, Python]
-- **Audio Processing**: [Specify libraries or technologies used for audio generation and playback]
+- **Frontend**: HTML, CSS
+- **Backend**: Javascript
+- **Audio Processing**: Tone.js
 
 ## Contributing
 We welcome contributions from the community! If you're interested in enhancing Groove's features or fixing bugs, please follow these steps:
