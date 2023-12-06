@@ -34,7 +34,7 @@ We welcome contributions from the community! If you're interested in enhancing G
 6. **Submit a Pull Request**: Create a pull request from your fork repository to our main repository.
 
 ## License
-[Specify license - e.g., MIT, GPL]
+GNU GENERAL PUBLIC LICENSE
 
 ## Contact
-For support or any queries, feel free to reach out to us at [Contact Information].
+For support or any queries, feel free to reach [Antonio](mailto:ahalkiadakis@albany.edu), or [Nick](mailto:nkammerer@albany.edu).
