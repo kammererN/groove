@@ -9,6 +9,7 @@ const arpeggioTimeinBetween = duration / arpeggioSwiftness ;
 const arpeggioDuration = timeInBetween / arpeggioSwiftness ;
 let chordNumerals = [6,5,4,3,2,1,0] ;
 
+// MP3 audio samples used to create the piano noises, even creating new noises by pitch shifting if the note does not exist in the collection.
 const sampler = new Tone.Sampler({
     urls: {
         "C4": "C4.mp3",
@@ -44,6 +45,7 @@ function play(chordProgression) {
 }
 
 // Plays arpeggio
+// TODO make the arpeggio sound better; Shuffle the 2d arrays first and then merge should be the solution.
 function playArpeggio(chordProgression) {
 
     // Handles UI Play Btn transition
@@ -66,6 +68,8 @@ function playArpeggio(chordProgression) {
 // Stops audio runtime.
 function pause () {}
 
+// Creates a chord depending on the bass note, chord quality, and if it is a seventh.
+// TODO add diminished chords, and possibly sus2, sus4, 6ths, 9ths, and add9s.
 function chord(bass, quality, seventh, dominant) {
     const chord = [];
 
@@ -400,6 +404,8 @@ function chord(bass, quality, seventh, dominant) {
 
 }
 
+// Creates a chord progression of a given scale and key, with a choice of sevenths.
+// TODO add more scales, and option to combine 7ths with "normal" chord progressions.
 function progression(scale, key, seventh) {
     const chordProgression = [];
     let keyIndex = notes.indexOf(key);
@@ -425,6 +431,8 @@ function progression(scale, key, seventh) {
     return chordProgression;
 }
 
+// Creates random chords for a scale.
+// TODO add options for "better" sounding random chords, such as leading chord to dominant, then to tonic.
 function randomChords(numOfChords) {
 
     const num = [];

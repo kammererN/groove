@@ -1,4 +1,5 @@
 // Play Btn Click Event Listener
+// TODO fix pausing audio, and add seperate button for arpeggios.
 $("#play-btn").on("click", function() {
     console.log("Play, Transport state: " + Tone.Transport.state);
     if (Tone.context.state !== "running") {
@@ -12,7 +13,7 @@ $("#play-btn").on("click", function() {
     // playArpeggio(progression("major", "E", true));
 });
 
-// Random Btn Click Event Listener
+// Random Button Click Event Listener
 $("#random-btn").on("click", function ( ) {
     console.log("Shuffle")
     chordNumerals = randomChords(6);
@@ -20,6 +21,7 @@ $("#random-btn").on("click", function ( ) {
 })
 
 // Advanced Menu Btn Event Listener
+// TODO add functionality
 $("#advanced-menu-btn").on("click", function () {
     console.log("Settings");
 })
