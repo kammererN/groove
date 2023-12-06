@@ -1,5 +1,5 @@
 // Play Btn Click Event Listener
-// TODO fix pausing audio, and add seperate button for arpeggios.
+// TODO fix pausing audio, and add separate button for arpeggios.
 $("#play-btn").on("click", function() {
     console.log("Play, Transport state: " + Tone.Transport.state);
     if (Tone.context.state !== "running") {

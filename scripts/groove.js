@@ -7,7 +7,7 @@ const timeInBetween = 1.2;
 const arpeggioSwiftness = 6 ;
 const arpeggioTimeinBetween = duration / arpeggioSwiftness ;
 const arpeggioDuration = timeInBetween / arpeggioSwiftness ;
-let chordNumerals = [6,5,4,3,2,1,0] ;
+let chordNumerals = [6,5,4,3,2,1,0] ; // Default case of chords for website.
 
 // MP3 audio samples used to create the piano noises, even creating new noises by pitch shifting if the note does not exist in the collection.
 const sampler = new Tone.Sampler({
